@@ -1,10 +1,9 @@
 buildscript {
     ext {
-        springBootVersion = '2.1.7.RELEASE'
+        springBootVersion = '2.1.9.RELEASE'
     }
     repositories {
         mavenCentral()
-        jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
@@ -20,7 +19,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group 'org.gganghuni.springboot'
+group 'com.gganghuni.springboot'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -31,6 +30,11 @@ repositories {
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web:')
     testImplementation('org.springframework.boot:spring-boot-starter-test:')
+
+    implementation("org.projectlombok:lombok:")
+    annotationProcessor("org.projectlombok:lombok:")
+    testAnnotationProcessor("org.projectlombok:lombok:")
+
 }
 
 test {
