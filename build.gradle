@@ -21,7 +21,6 @@ apply plugin: 'io.spring.dependency-management'
 
 group 'com.gganghuni.springboot'
 version '1.0-SNAPSHOT'
-sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -31,9 +30,14 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web:')
     testImplementation('org.springframework.boot:spring-boot-starter-test:')
 
+    // lombok
     implementation("org.projectlombok:lombok:")
     annotationProcessor("org.projectlombok:lombok:")
     testAnnotationProcessor("org.projectlombok:lombok:")
+
+    //jpa
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:")
+    implementation("com.h2database:h2:")
 
 }
 
